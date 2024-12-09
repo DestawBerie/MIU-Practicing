@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIU Practicing</title>
+  </head>
+  <body>
+    <script>
+      //condition practising
+      let weather = "cloudy";
+      if ("rainy") {
+        //console.log("the weather is rainy, so please take the rainy coat");
+      } else if ((weather = "cloudy")) {
+        console.log("you need to have a jacket as reserve");
+      } else console.log("wear what you need to wear");
+
+      switch (weather) {
+        case "rainy":
+          console.log("you need to have a jacket");
+          break;
+
+        case "cloudy":
+          console.log("nice you have a jacket");
+          break;
+
+        default:
+          console.log("it is sunny weather so don'thave a jacket");
+      }
+      //iteration practising
+
+      for (let i = 0; i <= 6; i++) {
+        console.log();
+        console.log(i);
+      }
+      let i = 0;
+      while (i <= 6) {
+        console.log(i);
+        i += 2;
+      }
+      //function practising
+
+      function printFullName(firstName, lastName) {
+        return firstName + " " + lastName;
+      }
+      console.log(printFullName("Destaw, Berie"));
+      console.log(printFullName("Abebe, Kebedde"));
+
+      function square(n) {
+        return n * n;
+      }
+      console.log(square(5));
+      //arrow Function
+      const squareSix = (n) => n * n;
+      console.log(squareSix(6));
+
+      /*The MIU Questions
+      function returnEven(arr) {
+        const output = [];
+        for (let i = 0; arr.length; i++) {
+          if (arr[i] % 2 === 0) {
+            output.push(arr[i]);
+          }
+        }
+        return output;
+      }
+        */
+      /*
+       const returnEven=(arr)=> {
+        const output = [];
+        for (const num of arr) {
+          if (num % 2 === 0) {
+            output.push(num);
+          }
+        }
+        return output;
+      }
+        */
+      //advanced programing
+      const returnEven = (arr) => {
+        return arr.filter((num) => num % 2 == 0);
+      };
+
+      console.log(returnEven([1, 4, 5, 10]));
+      console.log(returnEven([9, 6, 23, 8]));
+      console.log(returnEven([1, 0, 5, 0]));
+
+      //2nd Function find the sum of the number
+
+      /*   function sum(n) {
+        let total=0
+        for (let i = 0; i <= n; i++) {
+            //console.log(i);
+            total=total+i
+        }
+        return total
+      }
+     console.log(sum(3));
+     console.log(sum(5));
+
+*/
+      //let us write thier full code or the recomended one
+      function sum(n) {
+        let output = 0;
+        while (n != 0) {
+          output += n;
+          n--;
+        }
+        return output;
+      }
+      console.log(sum(3));
+      console.log(sum(5));
+      //console.log(sum(-30)); it makes the code infinit limit
+
+      //the third questions
+
+      /* const noZeros=(arr)=>{
+        const newArr=[]
+        for(const num of arr){
+            if(num!==0) newArr.push(num)
+
+        }
+        return newArr
+      }
+      console.log(noZeros([1,4,5,0]))
+*/
+      //filter method also can do it
+      const noZeros = (arr) => {
+        return arr.filter((num) => num != 0);
+      };
+      console.log(noZeros([1, 4, 5, 0]));
+
+      /*
+      // next question about Double Array
+      const doubleArray=(arr)=>{
+        const newArr=[]
+        for (const num of arr){
+            newArr.push(num+2)
+        }
+        return newArr
+      }
+      console.log(doubleArray([1,2,4,4,4,5,0]))
+*/
+      /*// other way to Double Array
+      const doubleArray=(arr)=>{
+       return arr.map((num)=>num+2)
+      }
+      console.log(doubleArray([1,2,4,4,4,5,0]))
+*/
+      //other very short method
+      const doubleArray = (arr) => arr.map((num) => num + 2);
+
+      console.log(doubleArray([1, 2, 4, 4, 4, 5, 0]));
+
+      // checking the array for the number
+      /*
+      const containNumber=(arr,n)=>{
+        for (const num of arr){
+            if(num==n){
+                return true
+            }
+        }
+        return false
+      }
+    console.log(containNumber([1, 2, 3, 4, 6, 7, 8], 5));
+
+*/
+
+      /*
+//other way to do by using indexOf method
+      const containNumber = (arr, n) => {
+        return arr.indexOf(n) !== -1;
+      };
+      console.log(containNumber([1, 2, 3, 4, 6, 7, 8], 5));
+      console.log(containNumber([23, 33, 44], 44));
+      console.log(containNumber([12, 13, 14, 15], 16));
+
+*/
+
+      //very short method
+      const containNumber = (arr, n) => arr.indexOf(n) !== -1;
+
+      console.log(containNumber([1, 2, 3, 4, 6, 7, 8], 5));
+      console.log(containNumber([23, 33, 44], 44));
+      console.log(containNumber([12, 13, 14, 15], 16));
+
+      //last question of MIU
+
+      const repeat = (arr, num, n) => {
+        const newArr = [];
+        for (const number of arr) {
+          if (number == num) {
+            for (let i = 0; i < n; i++) {
+              newArr.push(number);
+            }
+          } else {
+            newArr.push(number);
+          }
+        }
+        return newArr;
+      };
+      console.log(repeat([1, 2, 3, 4, 5], 3, 10));
+    </script>
+  </body>
+</html>
